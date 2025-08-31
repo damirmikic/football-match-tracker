@@ -1,0 +1,21 @@
+{
+  "name": "football-matches-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server for fetching football matches from betting APIs",
+  "main": "proxy-server.js",
+  "scripts": {
+    "start": "node proxy-server.js",
+    "dev": "nodemon proxy-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["football", "betting", "api", "proxy", "cors"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Matches Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>⚽ Football Matches</h1>
+            <div class="header-controls">
+                <button id="toggleMockBtn" class="toggle-btn">Use Mock Data</button>
+                <button id="refreshBtn" class="refresh-btn">Refresh Data</button>
+            </div>
+        </header>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading football matches...</p>
+        </div>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="matches-container" id="matchesContainer">
+            <!-- Matches will be populated here -->
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p>Failed to load some data sources. Check console for details.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
