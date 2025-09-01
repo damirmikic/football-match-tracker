@@ -128,11 +128,11 @@ h1 {
 
 .matches-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 20px;
 }
 
-.match-card {
+.match-comparison-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     padding: 20px;
@@ -140,8 +140,174 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.match-card:hover {
+.match-comparison-card:hover {
     transform: translateY(-5px);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.match-info h3.match-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+}
+
+.match-details {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.match-details .league {
+    background: #3498db;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.match-details .match-time {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.bookmaker-count {
+    background: #27ae60;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.odds-comparison {
+    margin-bottom: 20px;
+}
+
+.odds-header {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 2px solid #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.odds-header .outcome-label {
+    font-weight: 700;
+    color: #34495e;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.odds-header .outcome-label:first-child {
+    text-align: left;
+    color: transparent;
+}
+
+.bookmaker-odds-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    align-items: center;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.bookmaker-odds-row:last-child {
+    border-bottom: none;
+}
+
+.bookmaker-name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.odd-cell {
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.odd-cell.best-odd-highlight {
+    background: #27ae60;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.odd-cell.no-odds {
+    background: #ecf0f1;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.best-odds-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #f8f9fa;
+}
+
+.best-odd {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.best-odd.no-odds {
+    background: #95a5a6;
+    box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+}
+
+.best-odd .odd-value {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.best-odd .odd-bookmaker {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.no-matches {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    color: #7f8c8d;
+}
+
+.no-matches h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #34495e;
 }
 
 .match-header {
@@ -217,5 +383,38 @@ h1 {
     
     .matches-container {
         grid-template-columns: 1fr;
+    }
+    
+    .match-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .odds-header,
+    .bookmaker-odds-row {
+        grid-template-columns: 80px 1fr 1fr 1fr;
+        gap: 5px;
+    }
+    
+    .bookmaker-name {
+        font-size: 0.8rem;
+    }
+    
+    .odd-cell {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .best-odds-summary {
+        gap: 10px;
+    }
+    
+    .best-odd .odd-value {
+        font-size: 1.2rem;
+    }
+    
+    .best-odd .odd-bookmaker {
+        font-size: 0.7rem;
     }
 }
